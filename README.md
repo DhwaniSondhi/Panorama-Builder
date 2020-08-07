@@ -1,4 +1,4 @@
-## Panorama-Building-Software
+## Panorama-Builder
 This is the assignment of COMP6341 COMPUTER VISION. The aim of this assignment is to build a software to stitch multiple images together to form panoramas. This assignment uses the feature descriptor built in [this](https://github.com/DhwaniSondhi/Feature-Descriptor) repository.
 
 ### Description
