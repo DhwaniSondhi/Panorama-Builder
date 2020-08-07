@@ -16,10 +16,10 @@ For a selected number of iterations, 4 random pairs of potentially matching poin
 
 **PANORAMA MOSAIC STITCHING**<br/>
 Implemented the function stitch(image1, image2, hom, homInv, stitchedImage):
-- Computed the size of the new stiched image by projecting the corners of second image onto the first image. 
-- Copied the first image on the stiched image.
-- Projected each pixel in stiched image onto second image. 
-- Blended the pixel value to the stiched image if the pixel lies within the boundary of second image.
+- Computed the size of the new stitched image by projecting the corners of second image onto the first image. 
+- Copied the first image on the stitched image.
+- Projected each pixel in stitched image onto second image. 
+- Blended the pixel value to the stitched image if the pixel lies within the boundary of second image.
 
 ### How to Run the code?
 - Set up an environment with python version: 3.5.1 and open-contrib version: 3.3.1.
