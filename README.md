@@ -1,30 +1,30 @@
 ## Panorama-Builder
-This is the assignment of COMP6341 COMPUTER VISION. The aim of this assignment is to build a software to stitch multiple images together to form panoramas. This assignment uses the feature descriptor built in [this](https://github.com/DhwaniSondhi/Feature-Descriptor) repository.
+This is the assignment of COMP6341 COMPUTER VISION. This assignment aims to build software to stitch multiple images together to form panoramas. This assignment uses the feature descriptor built-in [this](https://github.com/DhwaniSondhi/Feature-Descriptor) repository.
 
 ### Description
 **FEATURE DETECTION AND MATCHING**<br/>
 - This follows the same steps described in [this](https://github.com/DhwaniSondhi/Feature-Descriptor) feature-descriptor.
-- Built an additional seperate code using inbuilt functions of [SIFT](https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_feature2d/py_sift_intro/py_sift_intro.html) for comparison of output. 
+- Built an additional separate code using inbuilt functions of [SIFT](https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_feature2d/py_sift_intro/py_sift_intro.html) for comparison of output. 
 
 **RANSAC IMPLEMENTATION**<br/>
-Computed the homography between the images using RANSAC through following steps:
+Computed the homography between the images using RANSAC through the following steps:
 - **project(col1, row1, hom)**: It helps in projecting the point(x, y) in another image using the homography created.
 - **computeInlierCount(H, matches, numMatches, inlierThreshold)**: It helps in finding the number of inlying points given a homography.
-- **RANSAC (matches , numMatches, numIterations, inlierThreshold, hom, homInv, image1Display, image2Display)**: It takes the potentially matching points between two images and returns the homography transformation.
+- **RANSAC (matches, numMatches, numIterations, inlierThreshold, hom, homInv, image1Display, image2Display)**: It takes the potentially matching points between two images and returns the homography transformation.
 
-For a selected number of iterations, 4 random pairs of potentially matching points are taken. For this, homography is computed which is further used to find the number of inliers. The best homography is selected depending on the highest number of inliers. New inliers are computed for the best homography. These inliers helps in computing the final homography. 
+For a selected number of iterations, 4 random pairs of potentially matching points are taken. For this, homography is computed which is further used to find the number of inliers. The best homography is selected depending on the highest number of inliers. New inliers are computed for the best homography. These inliers help in computing the final homography. 
 
 **PANORAMA MOSAIC STITCHING**<br/>
 Implemented the function stitch(image1, image2, hom, homInv, stitchedImage):
-- Computed the size of the new stitched image by projecting the corners of second image onto the first image. 
+- Computed the size of the new stitched image by projecting the corners of the second image onto the first image. 
 - Copied the first image on the stitched image.
-- Projected each pixel in stitched image onto second image. 
-- Blended the pixel value to the stitched image if the pixel lies within the boundary of second image.
+- Projected each pixel in the stitched image onto the second image. 
+- Blended the pixel value to the stitched image if the pixel lies within the boundary of the second image.
 
 ### How to Run the code?
 - Set up an environment with python version: 3.5.1 and open-contrib version: 3.3.1.
-- Go to “code and input” folder.
-- If you want to see the panorama for the dummy images, the simply run the code.py. Else, open code.py, then go to “Start” function select the list of images and uncomment it if required.
+- Go to the “code and input” folder.
+- If you want to see the panorama for the dummy images, simply run the code.py. Else, open code.py, then go to the “Start” function select the list of images and uncomment it if required.
 - Run the file.
 - Final stitched image is displayed and saved as panoroma.png.
 
